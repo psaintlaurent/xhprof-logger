@@ -1,0 +1,19 @@
+{
+    "name": "psaintlaurent/xhprof-logger",
+    "description": "XHProf Logging Library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Patrick Saint - laurent",
+            "email": "patrick@saint-laurent.us"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {"psaintlaurent\\XHProfLogger\\": "src/"}
+    }
+
+}
