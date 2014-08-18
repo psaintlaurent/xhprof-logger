@@ -2,7 +2,7 @@
 
 namespace psaintlaurent\XHProfLogger;
 
-class AbstractLogger
+abstract class AbstractLogger
 {
     protected $logger;
     protected $data;
