@@ -2,18 +2,14 @@
 
 namespace psaintlaurent\XHProfLogger;
 
-class FileWriter
+class AbstractLogger
 {
     protected $logger;
     protected $data;
-    protected $path;
     protected $supplemental_data;
 
     public function __construct($path, $supplemental_data=array()) {
 
-        $this->path = $path;
-        $this->supplemental_data = $supplemental_data;
-        $this->startXHProfLogging();
     }
 
     public function startXHProfLogging() {
@@ -37,13 +33,13 @@ class FileWriter
 	if(empty($this->data)) {
 
 	        $this->data = xhprof_disable();
-        	$this->logger = fopen($this->path, "a+");
         	$this->data["supplemental_data"] = $this->supplemental_data;
-        	fwrite($this->logger, json_encode($this->data).PHP_EOL);
-        	fclose($this->logger);
+		$this->__writeXHProfLoggingSession();
         	if($exit) { exit; }
 	}
     }
+
+    abstract protected function __writeXHProfLoggingSession();
 
     public function __destruct() {}
 }
