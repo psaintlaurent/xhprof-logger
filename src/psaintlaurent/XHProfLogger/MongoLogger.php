@@ -2,7 +2,7 @@
 
 namespace psaintlaurent\XHProfLogger;
 
-class MongoLogger extends Logger
+class MongoLogger extends AbstractLogger
 {
 
     private $__un;

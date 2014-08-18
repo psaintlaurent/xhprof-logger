@@ -2,7 +2,7 @@
 
 namespace psaintlaurent\XHProfLogger;
 
-class FileLogger extends Logger
+class FileLogger extends AbstractLogger
 {
 
     private $__path;
